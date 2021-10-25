@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!------- header -------->
+    <%- include('partials/header.ejs') %>
+</head>
+<body>
+
+    <!--------- Navigation ----------->
+    <%- include('partials/navigation.ejs') %>
+
+    <!------ display order ----->
+    <section class="table__section mt-5">
+        <div class="container">
+            <% if(messages.success){ %>
+                <h5 id="suucess__alert" style="color: green; font-weight: bold;"><%= messages.success %></h5>
+            <% } %>
+            <table class="table" style="border: 1px solid black;">
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Phone</th>
+                    <th>Addredd</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% if(orders.length) { %>
+                        <% orders.forEach((order) => { %>
+                            <tr>
+                                <th>
+                                    <a href="" style="color: orange;"><%= order._id %></a>
+                                </th>
+                                <td><%= order.phone %></td>
+                                <td><%= order.address %></td>
+                                <td><%= moment(order.createdAt).format('h:mm:ss a') %></td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td>can't get order</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+              </table>
+        </div>
+    </section>
+
+
+
+    <!-------- footer section --------->
+    <%- include('partials/footer.ejs') %>
+    
+</body>
+</html>

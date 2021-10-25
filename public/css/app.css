@@ -1,0 +1,290 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/******** header style **********/
+.navbar{
+    background-color: gray !important;
+}
+
+.navbar-brand{
+    color: white !important;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+.btn-orange{
+    background-color: orange;
+    color: white;
+    text-transform: capitalize;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-orange:hover{
+    color: white;
+}
+
+/***** hero style *****/
+.hero-section{
+    width: 100%;
+    height: 90vh;
+}
+
+.hero-heading{
+    margin-top: 13em;
+}
+
+.hero-heading h6{
+    color: black;
+    font-weight: 600;
+}
+
+.hero-heading h1{
+    font-weight: bold;
+}
+
+.hero-heading button{
+    border: none !important;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+}
+
+.hero-image{
+    margin-top: 30px;
+}
+
+.hero-image img{
+    width: 550px;
+}
+
+
+
+/************ item style section ************/
+.items{
+    width: 100%;
+    height: 70vh;
+}
+
+.item-details{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.item-image img{
+    width: 200px;
+    text-align: center;
+}
+
+.item-title h5{
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.item-btn button{
+    border: none !important;
+    padding: 10px 20px;
+    background-color: gray;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.item-cost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item-cost .price h6{
+    font-weight: bold;
+}
+
+.add-btn button{
+    border: 3px solid orange !important;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/********* empty cart style ************/
+.empty__cart{
+    width: 100%;
+    height: 90vh;
+}
+
+.empty__cart__details{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.empty__cart__details h4{
+    font-weight: bold;
+}
+
+.empty__cart__image img{
+    width: 400px;
+}
+
+
+/************ total itam style **************/
+.total__item__details{
+    width: 60%;
+    margin: 50px auto;
+}
+
+.total__item__heading h4{
+    font-weight: bold;
+}
+
+.total__item_carts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.total__item__cart__image{
+    display: flex;
+    align-items: center;
+}
+
+.total__item__cart__image img{
+    width: 120px;
+}
+
+.total__item__cart__image__name{
+    margin-left: 10px;
+}
+
+.total__item__cart__image__name h4{
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.total__item__cart__image__name h5{
+    text-transform: uppercase;
+    color: gray;
+    font-size: 13px;
+}
+
+.total__item__cart__piece h5{
+    font-size: 17px;
+}
+
+.total__item__cart__price h5{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.total__price h5{
+    text-align: right;
+    font-weight: bold;
+}
+
+.total__price h5 span{
+    color: orange;
+}
+
+.cart__form{
+    width: 300px;
+    margin-left: auto;
+}
+
+.cart__item__form__btn{
+    padding: 10px 20px;
+    background-color: orange;
+    border: none !important;
+    color: white;
+    border-radius: 10px;
+    margin-left: 130px;
+}
+
+
+/*********** register style ************/
+.register__section{
+    position: relative;
+}
+
+.register__form__style{
+    width: 350px;
+    height: 350px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 50px auto;
+}
+
+.register-btn{
+    padding: 10px 20px;
+    border: none !important;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+}
+
+.link__style{
+    text-decoration: none !important;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.link__style:hover{
+    color: orange;
+}
+
+
+/*********** login style ************/
+.login__section{
+    position: relative;
+}
+
+.login__form__style{
+    width: 350px;
+    height: 300px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 50px auto;
+}
+
+.login-btn{
+    padding: 10px 20px;
+    border: none !important;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+}
+
+.link__style{
+    text-decoration: none !important;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.link__style:hover{
+    color: orange;
+}
+

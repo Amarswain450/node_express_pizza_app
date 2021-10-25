@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!------- header ---------->
+    <%- include('partials/header.ejs') %>
+</head>
+<body>
+    
+    <!--------- navigation --------->
+    <%- include('partials/navigation.ejs') %>
+
+    <!--------- registration section ---------->
+    <section class="register__section">
+        <div class="register__form__style">
+            <form action="/register" method="POST" class="register__form">
+                <% if(messages.error){ %>
+                    <span style="font-weight: bold; color: red;"><%= messages.error %></span>
+                <% } %>
+                <div class="form-group">
+                    <label for="text">Name</label>
+                    <input name="name" value="<%= messages.name %>" type="text" class="form-control" placeholder="Your name" id="text">
+                  </div>
+                <div class="form-group mt-3">
+                    <label for="email">Email</label>
+                    <input name="email" value="<%= messages.email %>" type="email" class="form-control" placeholder="Enter" id="email">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="pwd">Password</label>
+                    <input name="password" type="password" class="form-control" placeholder="Password" id="pwd">
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="register-btn">Register</button>
+                    <a href="/login" class="link__style">Already have account? </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-------- footer -------->
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

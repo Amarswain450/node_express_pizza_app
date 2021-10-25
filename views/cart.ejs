@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!------- header -------->
+    <%- include('partials/header.ejs') %>
+</head>
+<body>
+
+    <!--------- Navigation ----------->
+    <%- include('partials/navigation.ejs') %>
+
+
+    <!-------- total itam section ----------->
+    <% if(session.cart){ %>
+        <section class="total__item">
+            <div class="total__item__details">
+                <div class="total__item__heading">
+                    <h4>Order Summary</h4>
+                    <hr />
+                </div>
+
+                <% for(let pizza of Object.values(session.cart.items)) { %>
+                    <div class="total__item_carts">
+                        <div class="total__item__cart__image">
+                            <img src="/imgs/<%= pizza.item.image %>" alt="">
+                            <div class="total__item__cart__image__name">
+                                <h4><%= pizza.item.name %></h4>
+                                <h5><%= pizza.item.size %></h5>
+                            </div>
+                        </div>
+                        <div class="total__item__cart__piece">
+                            <h5><%= pizza.qty %> Pcs</h5>
+                        </div>
+                        <div class="total__item__cart__price">
+                            <h5>&#x20B9; <%= pizza.item.price * pizza.qty %> </h5>
+                        </div>
+                    </div>
+                    <hr />
+                <% } %>
+                
+                <div class="total__price">
+                    <h5>Total Amount: <span>&#x20B9; <%= session.cart.totalPrice %></span></h5>
+                </div>
+                <div class="cart__form">
+                    <% if(user) { %>
+                    <form action="/order" method="POST" class="cart__item__form">
+                        <div class="form-group mt-3">
+                            <input name="phone" type="text" class="form-control" placeholder="Phone number" id="phone">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input name="address" type="text" class="form-control" placeholder="Address" id="address">
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="cart__item__form__btn">Login To Order</button>
+                        </div>
+                    </form>
+                    <% } else { %>
+                    <div class="form-group mt-3">
+                        <a href="/login" style="text-decoration: none;" class="cart__item__form__btn">Login To Continue</a>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+    <% } else{ %>
+        <!----------- empty cart section ------------->
+        <section class="empty__cart">
+            <div class="empty__cart__details">
+                <h4>Cart Empty</h4>
+                <p>You probably haven't ordered a pizza yet. <br /> To order a pizza. go to the home page</p>
+                <div class="empty__cart__image">
+                    <img src="/imgs/empty-cart.png" alt="">
+                </div>
+            </div>
+        </section>
+    <% } %>
+    
+
+    <!-------- footer section --------->
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

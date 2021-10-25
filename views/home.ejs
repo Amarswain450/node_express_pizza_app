@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header.ejs') %>
+</head>
+<body>
+    
+
+    <!--------- Navigation ----------->
+    <%- include('partials/navigation.ejs') %>
+
+    <!----------- hero section start ------------->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="hero-heading">
+                        <h6>Are you hungry ?</h6>
+                        <h1>Don't Wait !</h1>
+                        <button>Order now</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="hero-image">
+                        <img src="/imgs/hero-pizza.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--------- items section start ---------->
+    <section class="items">
+        <div class="container">
+            <div class="row">
+
+                <% pizzas.forEach((pizza) => { %>
+                    <div class="col-md-3">
+                        <div class="item-details">
+                            <div class="item-image">
+                                <img src="/imgs/<%= pizza.image %>" alt="">
+                            </div>
+                            <div class="item-title">
+                                <h5><%= pizza.name %></h5>
+                            </div>
+                            <div class="item-btn">
+                                <button><%= pizza.size %></button>
+                            </div>
+                            <div class="item-cost">
+                                <div class="price">
+                                    <h6><span>&#x20B9; </span><%= pizza.price %></h6>
+                                </div>
+                                <div class="add-btn">
+                                    <button data-pizza="<%= JSON.stringify(pizza) %>" class="add-to-btn">+ add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
